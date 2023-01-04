@@ -17,7 +17,10 @@ export function LoginForm() {
     try {
       setIsLoading(true);
       // API call:
-      const data = { payload: { token: {} }, message: '' };
+      const data = {
+        payload: { username, password, rememberMe, token: {} },
+        message: '',
+      };
       if (data.payload && data.payload.token) {
         setTimeout(() => {}, 1000);
       } else {
@@ -31,50 +34,37 @@ export function LoginForm() {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend className="h1">Login</legend>
+        <legend>Login</legend>
         <div className="mb-3">
-          <label htmlFor="usernameInput" className="form-label">
-            Username
-          </label>
+          <label htmlFor="usernameInput">Username</label>
           <input
             type="text"
             id="usernameInput"
-            className="form-control"
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="passwordInput" className="form-label">
-            Password
-          </label>
+          <label htmlFor="passwordInput">Password</label>
           <input
             type="password"
             id="passwordInput"
-            className="form-control"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="mb-3">
-          <div className="form-check">
+          <div>
             <input
-              className="form-check-input"
               type="checkbox"
               id="RememberMeInput"
               onChange={(e) => setRememberMe(e.target.checked)}
             />
-            <label className="form-check-label" htmlFor="RememberMeInput">
-              Remember Me
-            </label>
+            <label htmlFor="RememberMeInput">Remember Me</label>
           </div>
         </div>
-        {errorMessage && (
-          <div className="alert alert-danger" role="alert">
-            {errorMessage}
-          </div>
-        )}
-        <button type="submit" className="btn btn-primary" disabled={isLoading}>
+        {errorMessage && <div role="alert">{errorMessage}</div>}
+        <button type="submit" disabled={isLoading}>
           Login
         </button>
       </fieldset>
