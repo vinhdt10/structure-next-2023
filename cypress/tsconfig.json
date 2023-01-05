@@ -6,7 +6,5 @@
     "types": ["node", "cypress", "@percy/cypress", "@testing-library/cypress"],
 
     "isolatedModules": false
-  },
-  "include": ["**/*.ts"],
-  "exclude": []
+  }
 }
