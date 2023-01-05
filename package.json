@@ -14,6 +14,7 @@
     "build-prod": "run-s clean build export",
     "clean": "rimraf .next out",
     "prepare": "husky install",
+    "start-prod": "serve ./out",
     "check-types": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty"
   },
   "dependencies": {
@@ -65,6 +66,7 @@
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
+    "serve": "^14.1.2",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.4"
   }
