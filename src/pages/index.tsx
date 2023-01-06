@@ -1,3 +1,4 @@
+import { CustomButton } from '@/components/Controls/Button';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
@@ -12,6 +13,7 @@ const Index = () => {
       }
     >
       <h1>Hello word</h1>
+      <CustomButton />
     </Main>
   );
 };
