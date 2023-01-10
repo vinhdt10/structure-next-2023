@@ -1,3 +1,7 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Button, Checkbox, FormControlLabel } from '@mui/material';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { pink } from '@mui/material/colors';
 import { useEffect, useState } from 'react';
 
 export function LoginForm() {
@@ -34,39 +38,53 @@ export function LoginForm() {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Login</legend>
+        <legend className="mb-3 text-lg font-black">Login</legend>
         <div className="mb-3">
-          <label htmlFor="usernameInput">Username</label>
           <input
             type="text"
             id="usernameInput"
             placeholder="Username"
+            className="login-input"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="passwordInput">Password</label>
+        <div>
           <input
             type="password"
             id="passwordInput"
+            className="login-input"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="mb-3">
-          <div>
-            <input
-              type="checkbox"
-              id="RememberMeInput"
-              onChange={(e) => setRememberMe(e.target.checked)}
-            />
-            <label htmlFor="RememberMeInput">Remember Me</label>
-          </div>
+          <FormControlLabel
+            label={'Remember me'}
+            onChange={() => {
+              setRememberMe(true);
+            }}
+            control={
+              <Checkbox
+                defaultChecked
+                sx={{
+                  color: pink[800],
+                  '&.Mui-checked': {
+                    color: pink[600],
+                  },
+                }}
+              />
+            }
+            defaultChecked
+          />
         </div>
         {errorMessage && <div role="alert">{errorMessage}</div>}
-        <button type="submit" disabled={isLoading}>
-          Login
-        </button>
+        <Button
+          className="bg-yellow-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full"
+          type="submit"
+          disabled={isLoading}
+        >
+          Login Now
+        </Button>
       </fieldset>
     </form>
   );

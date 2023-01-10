@@ -8,7 +8,8 @@
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
-    "source.fixAll.eslint"
+    "source.fixAll.eslint",
+    "source.fixAll.stylelint"
   ],
   "jest.autoRun": {
     "watch": false // Start the jest with the watch flag
@@ -21,5 +22,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.ignorePath": ".gitignore" // Don't run prettier for files listed in .gitignore
+  "stylelint.validate": ["css", "scss"],
+  "nuxt.isNuxtApp": false
 }

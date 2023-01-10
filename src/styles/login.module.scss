@@ -1,0 +1,179 @@
+.login__container {
+  height: 800px;
+  width: 1360px;
+  background: linear-gradient(180deg, #ffbcd7 0%, #ffd4c9 100%);
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @apply grid;
+  @apply grid-cols-3;
+
+  .left {
+    @apply col-span-1;
+    position: relative;
+
+    .circle {
+      position: absolute;
+      width: 1300px;
+      height: 1300px;
+      left: -855px;
+      top: -230px;
+      background: linear-gradient(180deg, #ff4b80 0%, #fe8161 100%);
+      border-radius: 50%;
+    }
+
+    .content {
+      position: absolute;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      &--title {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 40px;
+        color: #fff;
+      }
+      &--logo {
+        display: inline;
+        background-color: #000;
+        border-radius: 15px;
+        padding: 10px 0px;
+
+        &__image {
+          background: url("../../public/images/logo.svg");
+          width: 200px;
+          height: 200px;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  .right {
+    @apply col-span-2;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .login-form {
+      width: 400px;
+      height: 750px;
+      filter: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.24));
+      background: linear-gradient(180deg, #ff3c8a 0%, #ffd2ca 100%);
+      border-radius: 30px;
+
+      .top-header {
+        margin-top: 10px;
+        height: 30px;
+        color: #fff;
+        font-size: 15px;
+
+        @apply grid;
+        @apply grid-cols-4;
+
+        &--left {
+          @apply col-span-1;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+        }
+        &--center {
+          @apply col-span-2;
+          background-color: #000;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+
+          .first-icon {
+            width: 50%;
+
+            &--left {
+              margin-left: 5px;
+              height: 20px;
+              width: 20px;
+            }
+          }
+          .last-icon {
+            width: 50%;
+            @apply flex flex-row-reverse;
+
+            &--right {
+              margin-right: 5px;
+              height: 20px;
+              width: 20px;
+            }
+          }
+        }
+        &--right {
+          @apply col-span-1;
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &__title {
+        margin-top: 50px;
+        margin-left: 30px;
+        color: #fff;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+      }
+      &__menu {
+        margin-top: 30px;
+        margin-left: 30px;
+
+        &--btn-login {
+          @apply border-none;
+          color: #fff;
+          font-weight: 600;
+        }
+
+        &--btn-signup {
+          @apply border-none;
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+
+      &__input {
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+
+        &--circle {
+          position: relative;
+          width: 450px;
+          height: 450px;
+          left: -95px;
+          top: 15px;
+          background: #fff;
+          border-radius: 50%;
+
+          &__input--form {
+            position: absolute;
+            left: 115px;
+            top: 60px;
+            width: 280px;
+          }
+        }
+      }
+    }
+  }
+
+  .login-input {
+    @apply shadow appearance-none border border-gray-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight;
+  }
+}
