@@ -79,7 +79,7 @@ export function LoginForm() {
         </div>
         {errorMessage && <div role="alert">{errorMessage}</div>}
         <Button
-          className="bg-yellow-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full"
+          className="bg-yellow-500 hover:bg-pink-700 text-black font-bold py-2 px-4"
           type="submit"
           disabled={isLoading}
         >
